@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "hotserver"
+  labels:
+    app: "hotserver"
+spec:
+  selector:
+    matchLabels:
+      app: "hotserver"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: "hotserver"
+    spec:
+      containers:
+        - name: "hotserver"
+          image: wesleywillians/esquenta-k8s-live:v2
+
+          resources:
+            requests:
+              cpu: "0.03"
+              memory: 10Mi
+            limits:
+              cpu: "0.03"
+              memory: 15Mi

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: "hotserver"
+  labels:
+    app: "hotserver"
+spec:
+  selector:
+    matchLabels:
+      app: "hotserver"
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: "hotserver"
+    spec:
+      containers:
+        - name: "hotserver"
+          image: wesleywillians/esquenta-k8s-live:v2

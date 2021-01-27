@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: "hotserver-service"
+spec:
+  selector:
+    app: "hotserver"
+  type: LoadBalancer
+  ports:  
+  - name: hotserver-port
+    port: 80
